@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "english": "apple",
+    "russian": "яблоко",
+    "level": "easy"
+  },
+  {
+    "id": 2,
+    "english": "book",
+    "russian": "книга",
+    "level": "easy"
+  },
+  // ... остальные 998 слов
+  {
+    "id": 1000,
+    "english": "quintessential",
+    "russian": "наиболее типичный",
+    "level": "hard"
+  }
+]
