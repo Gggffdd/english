@@ -1,0 +1,266 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --accent-color: #4fc3f7;
+  --correct-color: #4caf50;
+  --incorrect-color: #f44336;
+  --background-color: #f5f7fa;
+  --card-color: #ffffff;
+  --text-color: #333333;
+  --hint-color: #777777;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.mode-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mode-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-button.active {
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.mode-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.progress-container {
+  margin-bottom: 2rem;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--hint-color);
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.word-card {
+  background-color: var(--card-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.word-card.correct {
+  border-left: 5px solid var(--correct-color);
+}
+
+.word-card.incorrect {
+  border-left: 5px solid var(--incorrect-color);
+}
+
+.word-display h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.translation {
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  min-height: 2.5rem;
+}
+
+.hint {
+  color: var(--hint-color);
+  letter-spacing: 2px;
+}
+
+.word-level {
+  margin-top: 1rem;
+}
+
+.level-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.level-badge.easy {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.level-badge.medium {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.level-badge.hard {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.answer-input {
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.check-button, .next-button, .hint-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.check-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.check-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.next-button {
+  background-color: var(--correct-color);
+  color: white;
+}
+
+.next-button:hover {
+  background-color: #3d8b40;
+}
+
+.hint-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.hint-button:hover {
+  background-color: #3da8d8;
+}
+
+.hint-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.app-footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.app-footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .word-display h2 {
+    font-size: 2rem;
+  }
+  
+  .translation {
+    font-size: 1.5rem;
+  }
+  
+  .mode-switcher {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
